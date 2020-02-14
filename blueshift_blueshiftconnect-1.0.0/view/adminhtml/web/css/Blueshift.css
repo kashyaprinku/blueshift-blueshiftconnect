@@ -1,0 +1,310 @@
+/**
+ * Blueshift Blueshidtconnect style
+ * @category  Blueshift
+ * @package   Blueshiftconnect
+ * @author    Blueshift
+ * @copyright Copyright (c) Blueshift
+ * @license   Blueshift
+ */
+#blueshiftconnect_step2 td {
+    padding: 1rem 1.5rem 0 0 !important;
+}
+p.note ,p.note >span {
+    display: inline-block !important;
+}
+tr td.value > span {
+    display: inline-block !important;
+}
+#row_blueshiftconnect_step2_cartcreation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_cartupdate td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_checkoutcreation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_orderactivities td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_ordercreation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_ordercancellation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_fulfilmentcreation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_fulfilmentupdate td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_refundcreate td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_customerrelatedactivities td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_customercreation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_customerupdate td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_customerdelete td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_customerenable td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_customerdisable td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_productrelatedactivities td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_productcreation td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_productdelete td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_step2_productupdate td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_Step1_validate_msg td.label span {
+    display: none !important;
+}
+#row_blueshiftconnect_Step1_validate_value{
+    display:none;
+}
+#row_blueshiftconnect_step2_productcount {
+    display: none;
+}
+#row_blueshiftconnect_step2_customercount {
+    display: none;
+}
+#row_blueshiftconnect_step2_ordercount {
+    display: none;
+}
+
+#row_blueshiftconnect_general_synchronisation p.note {
+    padding: 6px 15px 6px 15px;
+    background: #f31616;
+    color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 800;
+    width: 100px;
+}
+#row_blueshiftconnect_general_realtimesync p.note {
+    padding: 6px 15px 6px 15px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 800;
+    width: 100px;
+}
+#row_blueshiftconnect_general_eventwebhooks p.note {
+    padding: 6px 15px 6px 15px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 800;
+    width: 100px;
+}
+
+.accordion .section-config table {
+    position: relative;
+}
+.accordion .section-config #edit_btn_id {
+    background: #237FB2;
+    color: #fff;
+    border-color: #414CA1;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 10px;
+    transition: 0.3s;
+}
+.accordion .section-config input {
+    font-size: 13px;
+    transition: 0.3s;
+}
+#row_blueshiftconnect_Step1_userapikey input, #row_blueshiftconnect_Step1_eventapikey input {
+    height: 27px;
+    width: 101% !important;
+} 
+#row_blueshiftconnect_Step1_editbutton {
+    position: absolute;
+    right: 80px;
+    top: 22px;
+}
+.accordion .section-config #validate {
+    background: #247fb2;
+    border-color: #3a3838;
+    color: #fffcfc;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    min-width: 110px;
+    font-weight: 400;
+}
+.accordion .section-config .comment {
+    text-align: center;
+    margin: 30px 0 20px;
+    color: #676C6F;
+    font-size: 13px;
+}
+.accordion .section-config .ui-datepicker-trigger {
+    display: none;
+}
+#row_blueshiftconnect_step2_start_date input {
+    background: #F4F4F4;
+    border-color: #E0E0E0;
+}
+#row_blueshiftconnect_step2_createlistbutton #create_list_btn {
+    background: #247fb2;
+    border-color: #3a3838;
+    color: #fffcfc;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    min-width: 110px;
+    font-weight: 400;
+}
+#row_blueshiftconnect_step2_cartactivity ~ tr:nth-child(4n+1) td:nth-child(2) {
+        border-bottom: 1px solid #ECECEC;
+    padding-bottom: 10px !important;
+}
+#sync_edit_btn_id {
+    background: #237FB2;
+    color: #fff;
+    border-color: #414CA1;
+    padding: 6px 15px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 10px;
+    transition: 0.3s;
+}
+tr#row_blueshiftconnect_step2_synceditbutton {
+    position: absolute;
+    right: 80px;
+    top: 40px;
+}
+select#blueshiftconnect_step2_allow_customer_group {
+    height: 29px;
+    padding: 4px 5px;
+}
+select#blueshiftconnect_step2_custom_dropdown {height: 29px;padding: 4px 5px;}
+input#blueshiftconnect_step2_start_date {height: 29px;padding: 4px 5px;}
+tr#row_blueshiftconnect_Step1_keyscancelbutton {
+    position: absolute;
+    left: 45%;
+    bottom: 0;
+}
+tr.supt+tr#row_blueshiftconnect_Step1_keyscancelbutton {
+    position: inherit;}
+button#key_cancel_id {
+    display: none;
+    background: #eb5002;
+    border-color: #a53b06;
+    color: #fffcfc;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    min-width: 110px;
+    font-weight: 400;
+}
+
+button#sync_cencal_id {
+    display: none;
+    background: #eb5002;
+    border-color: #a53b06;
+    color: #fffcfc;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    min-width: 110px;
+    font-weight: 400;
+}
+.pie_progress {
+    width: 160px;
+    margin: 10px auto;
+}
+.successmsg {
+    color: #270;
+    background-color: #DFF2BF;
+    padding: 5px 10px;
+    font-size: 13px;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+.errormsg {
+    color:#D8000C;
+    background-color:#FFBABA;
+    padding: 5px 10px;
+    font-size: 13px;
+    border: 1px solid #D8000C;
+    border-radius: 3px;
+}
+#startsyncbutton {
+    background: 
+#237FB2;
+color:
+#fff;
+border: 1px solid
+    #237FB2;
+    padding: 8px 18px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 0.3s;
+}
+#row_blueshiftconnect_step2_synchronizationststus {
+    display: none;
+}
+#row_blueshiftconnect_step2_synchronizationststus {
+    display: none;
+}
+.ajaxmsg {
+    border: 1px solid #caa68c;
+    padding: 6px 5px;
+    font-size: 12px;
+    background: #ffd7b9;
+    position: absolute;
+    left: 33%;
+    top: 17px;
+}
+
+tr#row_blueshiftconnect_general_synchronisation.ajxmsg-padg td {
+    padding-top: 49px;
+}
+  
+  p#catalog_msg {
+    position: absolute;
+    left: 33%;
+    color: red;
+    margin-top: 43px;
+}
+
+tr#row_blueshiftconnect_step2_createlistbutton {
+    position: relative;
+}
+
+#row_blueshiftconnect_step2_createlistbutton #create_list_btn {
+    margin-bottom: 21px;
+}
+
+div.separator-top .title._collapsible strong {
+    text-indent: -999px;
+    display: block;
+    overflow: hidden;
+    background: url('https://devproject.udaantechnologies.com/cms/Blueshift-Logo.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+tr#row_blueshiftconnect_step2_placeholderimages {
+    display: none;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_blueshiftconnect">
+        <observer name="blueshift_admin_system_config_changed_section_blueshiftconnect" instance="Blueshift\Blueshiftconnect\Observer\ValidationObserver"/>
+    </event> 
+    <event name="catalog_product_save_after">
+		<observer name="blueshift_catalog_product_save_after" instance="Blueshift\Blueshiftconnect\Observer\Products\ProductCreate" /> 
+	</event>
+	<event name="catalog_product_delete_before">
+		<observer name="blueshift_catalog_product_delete_before" instance="Blueshift\Blueshiftconnect\Observer\Products\ProductDelete" /> 
+	</event> 
+    <event name="order_cancel_after">
+        <observer name="blueshift_order_cancel_after" instance="Blueshift\Blueshiftconnect\Observer\Order\OrderCancel" />
+    </event>
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="blueshift_controller_action_predispatch_checkout_index_index" instance="Blueshift\Blueshiftconnect\Observer\Checkout\CheckoutCreate" />
+    </event>
+	<event name="newsletter_subscriber_save_after">
+        <observer name="blueshift_newsletter_subscriber_save_after" instance="Blueshift\Blueshiftconnect\Observer\Customer\CustomerNewsletter" />
+    </event>
+
+    <event name="customer_register_success">
+        <observer name="blueshift_customer_register_success" instance="Blueshift\Blueshiftconnect\Observer\Customer\CustomerRegister" />
+    </event>
+
+    <event name="adminhtml_customer_save_after">
+        <observer name="blueshift_adminhtml_customer_save_after" instance="Blueshift\Blueshiftconnect\Observer\Customer\AdminCustomerRegister" />
+    </event>
+
+    <event name="customer_delete_after">
+        <observer name="blueshift_customer_delete_after" instance="Blueshift\Blueshiftconnect\Observer\Customer\CustomerDelete" />
+    </event>
+
+    <event name="checkout_submit_all_after">
+        <observer name="blueshift_checkout_submit_all_after" instance="Blueshift\Blueshiftconnect\Observer\Order\OrderCreation" />
+    </event>
+    
+    <event name="checkout_cart_update_items_after">
+        <observer name="blueshift_checkout_cart_update_items_after" instance="Blueshift\Blueshiftconnect\Observer\UpdateCart" />
+    </event>
+
+    <event name="sales_order_payment_refund">
+        <observer name="blueshift_sales_order_payment_refund" instance="Blueshift\Blueshiftconnect\Observer\Order\PaymentRefund" />
+    </event>
+    <event name="sales_order_shipment_save_after">
+        <observer name="blueshift_sales_order_shipment_save_after" instance="Blueshift\Blueshiftconnect\Observer\Fulfilment\FulfilmentCreate" />
+    </event>
+    <event name="checkout_cart_product_add_after">
+        <observer name="blueshift_checkout_cart_product_add_after" instance="Blueshift\Blueshiftconnect\Observer\AddCart" /> 
+    </event>
+    <!-- <event name="customer_address_save_after">
+        <observer name="blueshift_customer_address_save_after" instance="Blueshift\Blueshiftconnect\Observer\Customer\CustomerUpdate" />
+    </event> -->
+    <event name="customer_account_edited">
+        <observer name="blueshift_customer_account_edited" instance="Blueshift\Blueshiftconnect\Observer\Customer\CustomerUpdate" />
+    </event>
+</config>

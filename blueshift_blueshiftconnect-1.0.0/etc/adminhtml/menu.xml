@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+     <menu>
+        <add id="Blueshift_Blueshiftconnect::config" resource="Blueshift_Blueshiftconnect::config"
+             module="Blueshift_Blueshiftconnect" title="Blueshift" sortOrder="20"
+             action="adminhtml/system_config/edit/section/blueshiftconnect" parent="Magento_Config::system_config"/>
+    </menu>  
+</config>

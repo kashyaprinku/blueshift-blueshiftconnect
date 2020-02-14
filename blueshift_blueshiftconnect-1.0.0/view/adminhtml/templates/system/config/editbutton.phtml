@@ -1,0 +1,33 @@
+<?php $controller = $block->getCustomUrl();
+    echo $block->getButtonHtml();
+    $image =  $block->getPlaceholderImage();
+    $status = array();
+
+    $data = $block->getSyncActivityStatusFun();
+    
+ ?>
+ <script type="text/javascript">
+        require(['jquery', 'jquery/ui'], function($){
+            jQuery(document).ready( function() {
+            	var validate = '<?php echo $data; ?>';
+                var image = '<?php echo $image; ?>'
+                 jQuery('#blueshiftconnect_step2_placeholderimages').val(image);
+                if(validate == "In Progress"){
+                    jQuery("#row_blueshiftconnect_general_startsyncbuttonfield").hide();
+                    jQuery("#blueshiftconnect_Step1_userapikey").prop('readonly', true);
+                    jQuery("#blueshiftconnect_Step1_eventapikey").prop('readonly', true);
+                    jQuery('#row_blueshiftconnect_general_synchronisation p.note span').text(validate);
+                    jQuery('#row_blueshiftconnect_general_synchronisation p.note').css('background', 'yellow');
+                    jQuery('#row_blueshiftconnect_general_synchronisation p.note').css('color', '#000000');
+                }else if(validate == "Complete"){
+                    jQuery("#row_blueshiftconnect_general_startsyncbuttonfield").hide();
+                	jQuery("#blueshiftconnect_Step1_userapikey").prop('readonly', true);
+                    jQuery("#blueshiftconnect_Step1_eventapikey").prop('readonly', true);
+                    jQuery('#row_blueshiftconnect_general_synchronisation p.note span').text(validate);
+                    jQuery('#row_blueshiftconnect_general_synchronisation p.note').css('background', 'green');
+                }else{
+                    jQuery('#blueshiftconnect_step2-state').val(0);
+                }
+            });
+        });
+ </script>

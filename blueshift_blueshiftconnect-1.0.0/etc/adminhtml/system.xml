@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="blueshift" translate="label" sortOrder="100" class="separator-top">
+            <label>Blueshift</label>
+        </tab>
+        <section id="blueshiftconnect" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Blueshift</label>
+            <tab>blueshift</tab>
+            <resource>Blueshift_Blueshiftconnect::config_blueshift</resource>
+            <class>separator-top</class>
+            <group id="general" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="startsyncbuttonfield" translate="label ttf" type="button" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\StartSyncButton</frontend_model>
+                </field>
+                <label>Status</label>
+                <field id="synchronisation" translate="label" type="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
+                    <label>Historical Data Synchronization</label>
+                    <comment>Disabled</comment>
+                </field>
+                <field id="realtimesync" translate="label" type="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
+                    <label>Real Time Synchronization</label>
+                    <comment>Disabled</comment>
+                </field>
+            </group>
+            <group id="Step1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Extension Credentials</label>
+                    <field id="validate_msg" translate="label" type="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
+                        <label></label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    </field>
+                    <field id="validate_value" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
+                        <label>validate value</label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    </field>
+                    <field id="userapikey" translate="label" type="password" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
+                        <label>User API Key</label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="editbutton" translate="label ttf" type="button" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\EditButton</frontend_model>
+                    </field>
+                    <field id="eventapikey" translate="label" type="password" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="6">
+                        <label>Event API Key</label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                        <validate>required-entry</validate> 
+                    </field>
+                    
+                    <field id="validate" translate="label ttf" type="button" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\ApiValidationButton</frontend_model>
+                    </field>
+                    <field id="keyscancelbutton" translate="label ttf" type="button" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\KeysCancelButton</frontend_model>
+                    </field>
+                </group>
+                <group id="step2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Synchronization Data and Catalog</label>
+                    <comment>How much historical data to be sent to Blueshift based on its creation date.</comment> 
+                    <field id="start_date" translate="label comment" sortOrder="4" type="text" showInDefault="1" showInStore="1" >
+                        <label>From</label>
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\DatePicker</frontend_model>
+                    </field>
+                    <field id="allow_customer_group" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Unsubscribe Data</label>
+                        <depends>
+                            <field id="active">1</field>
+                        </depends>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="custom_dropdown" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Catalog Name</label>
+                        <source_model>Blueshift\Blueshiftconnect\Block\System\Config\CatalogSelect</source_model>
+                    </field>
+                    <field id="createlistbutton" translate="label ttf" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\CreateListButton</frontend_model>
+                    </field>
+                    <field id="synceditbutton" translate="label ttf" type="button" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\SyncEditButton</frontend_model>
+                    </field>
+                    <field id="newlist" translate="none" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="12">
+                        <label>New Catalog</label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    </field>
+                    <field id="syncancelbutton" translate="label ttf" type="button" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <frontend_model>Blueshift\Blueshiftconnect\Block\System\Config\SyncCancelButton</frontend_model>
+                    </field>
+                    <field id="productcount" translate="label" type="select" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Select Product</label>
+                        <source_model>Blueshift\Blueshiftconnect\Model\Config\Productcount</source_model>
+                    </field> 
+                    <field id="customercount" translate="label" type="select" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Select Customer</label>
+                        <source_model>Blueshift\Blueshiftconnect\Model\Config\Customercount</source_model>
+                    </field>
+                    <field id="ordercount" translate="label" type="select" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Select Order</label>
+                        <source_model>Blueshift\Blueshiftconnect\Model\Config\Ordercount</source_model>
+                    </field>  
+                    <field id="synchronizationststus" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="351">
+                        <label>Synchronization Ststus</label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model> 
+                    </field>
+                    <field id="placeholderimages" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="352">
+                        <label>Placeholder Images</label>
+                        <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    </field>
+            </group>
+        </section>
+    </system>
+</config>

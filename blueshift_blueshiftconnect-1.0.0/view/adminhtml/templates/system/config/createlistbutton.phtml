@@ -1,0 +1,41 @@
+<?php $controller = $block->getCustomUrl();
+    echo $block->getButtonHtml();
+ ?>
+<script type="text/javascript">
+require(['jquery'], function ($) {
+    jQuery(document).ready(function() {
+       	jQuery("#create_list_btn").click(function(){
+       		jQuery(".field-err-msg").remove();
+            jQuery('#catalog_msg').remove();
+    		var listname = jQuery("#blueshiftconnect_step2_newlist").val();
+    		var userkey = jQuery("#blueshiftconnect_Step1_userapikey").val();
+    		if(listname == ""){
+    			jQuery("#blueshiftconnect_step2_newlist").focus();
+    			jQuery('#row_blueshiftconnect_step2_newlist .value').append('<p class="field-err-msg" style="color:red">This field is required.</p>');
+    			return false;
+    		}else if(userkey == ""){
+    			jQuery("#blueshiftconnect_Step1_userapikey").focus();
+    			jQuery('#blueshiftconnect_Step1_userapikey .value').append('<p class="field-err-msg" style="color:red">This field is required.</p>');
+    			return false;
+    		}
+    		jQuery.ajax({
+	        	url: "<?php echo $block->getUrl('blueshiftconnect/actionajax/Createlist'); ?>",
+	        	type: "POST",
+	        	showLoader: true,
+	        	data: {listname:listname,userkey:userkey}, 
+	        	success: function(response){
+                    var obj = jQuery.parseJSON(response);
+                    var catalog_uuid = obj.catalog_uuid;
+		            if(catalog_uuid == "Something went wrong."){
+                        jQuery('#row_blueshiftconnect_step2_createlistbutton').append('<p id="catalog_msg">Catalog not create.check setting and try again.</p>');
+		            }else{
+		            	jQuery("#blueshiftconnect_step2_newlist").val("");
+                        jQuery("#blueshiftconnect_step2_custom_dropdown").append(new Option(listname, catalog_uuid,true, true));
+		            }
+			    }
+    		});
+    	});
+	});
+});
+
+ </script>

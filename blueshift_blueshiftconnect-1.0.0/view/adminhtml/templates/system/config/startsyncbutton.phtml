@@ -1,0 +1,52 @@
+<?php $controller = $block->getCustomUrl();
+    echo $block->getButtonHtml();
+ ?>
+ <script type="text/javascript">
+        require(['jquery', 'jquery/ui'], function($){
+            jQuery(document).ready( function() {
+            	jQuery("#row_blueshiftconnect_general_synchronisation div").remove();
+        		var validate = jQuery("#blueshiftconnect_Step1_validate_value").val();
+            	var catalog = jQuery("#blueshiftconnect_step2_custom_dropdown").val();
+            	var synchronizationststus = jQuery("#blueshiftconnect_step2_synchronizationststus").val();
+
+    			if(validate == 1 && catalog != 0 && synchronizationststus == ""){
+    				jQuery("#row_blueshiftconnect_general_startsyncbuttonfield").show();
+    				jQuery('#blueshiftconnect_step2-head').show(); 
+                    jQuery('#blueshiftconnect_step2-state').val(1);
+    			}else{
+                    jQuery("#row_blueshiftconnect_general_startsyncbuttonfield").hide();
+                }
+                /* ========Batch processing=========*/
+                jQuery("#startsyncbutton").click(function(){
+                	var validate = jQuery("#blueshiftconnect_Step1_validate_value").val();
+                	var catalog = jQuery("#blueshiftconnect_step2_custom_dropdown").val();
+                	var synchronizationststus = jQuery("#blueshiftconnect_step2_synchronizationststus").val();
+        			if(validate == 1 && catalog != 0 && synchronizationststus == ""){
+                        jQuery(this).hide();
+                    	process_step(1);
+                	}
+                });
+                  function process_step(step) {
+                    jQuery("#row_blueshiftconnect_general_synchronisation").append('<div class="ajaxmsg">Data synchronizing.</div>').addClass('ajxmsg-padg');
+                    jQuery.ajax({
+                        url: "<?php echo $block->getUrl('blueshiftconnect/actionajax/syncData'); ?>",
+                        type: "POST",
+                        data: {step:step},
+                        success: function(response){
+                            jQuery("#row_blueshiftconnect_general_synchronisation div").remove();
+                            jQuery("#row_blueshiftconnect_general_synchronisation").append('<div class="ajaxmsg">Data synchronized.</div>');
+                            location.reload();
+                        }
+                    }).fail(function (response) {
+                        if ( window.console && window.console.log ) {
+                            console.log( response );
+                        }
+                    });
+                }
+            /* ========Batch processing=========*/
+            });
+        });
+ </script>
+
+
+ 

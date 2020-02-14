@@ -1,0 +1,12 @@
+<?php $controller = $block->getCustomUrl();
+    echo $block->getButtonHtml();
+ ?>
+<script type="text/javascript">
+require(['jquery'], function ($) {
+    jQuery(document).ready(function() {
+       	jQuery("#sync_cencal_id").click(function(){
+       		location.reload(true);
+    	});
+	});
+});
+</script>

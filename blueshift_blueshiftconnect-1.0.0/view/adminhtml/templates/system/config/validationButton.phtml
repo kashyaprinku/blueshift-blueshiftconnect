@@ -1,0 +1,51 @@
+<?php $controller = $block->getCustomUrl();
+    echo $block->getButtonHtml();
+ ?>
+<script type="text/javascript">
+require(['jquery'], function ($) {
+    jQuery(document).ready(function() {
+       	jQuery("#validate").click(function(){
+       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value p").remove();
+    		var userkey = jQuery("#blueshiftconnect_Step1_userapikey").val();
+    		var eventkey = jQuery("#blueshiftconnect_Step1_eventapikey").val();
+    		if(userkey ==""){
+    			jQuery("#blueshiftconnect_Step1_userapikey").focus();
+    			jQuery('#blueshiftconnect_Step1_userapikey .value').append('<p style="color:red">This field is required.</p>');
+    			return false;
+    		}else if(eventkey == ""){
+    			jQuery("#blueshiftconnect_Step1_eventapikey").focus();
+    			jQuery('#blueshiftconnect_Step1_eventapikey .value').append('<p style="color:red">This field is required.</p>');
+    			return false;
+    		}
+    		jQuery.ajax({
+	        	url:"<?php echo $block->getUrl('blueshiftconnect/actionajax/ValidationAction'); ?>",
+	        	type: "POST",
+	        	showLoader: true,
+	        	data: {userkey:userkey,eventkey:eventkey},
+	        	success: function(response){
+	        		var obj = jQuery.parseJSON(response);
+		            var status = obj.status;
+			       	if(status == "ok"){
+			       		jQuery('#blueshiftconnect_Step1_validate_value').val(1);
+			       		jQuery("#blueshiftconnect_Step1_userapikey").prop('readonly', true);
+			       		jQuery("#blueshiftconnect_Step1_eventapikey").prop('readonly', true);
+			       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value").append('<p class="successmsg" style="color:green">Keys are validate Successfully. please select catalog.</p>');
+			       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value .control-value").css('color', 'green');
+			       		jQuery('#blueshiftconnect_step2-head').show();
+			       	}else if(status == 'not_valid'){
+			       		jQuery('#blueshiftconnect_Step1_validate_value').val(0);
+			       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value").append('<p class="errormsg" style="color:red">Userkey are not valid.please try again.</p>'); 
+			       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value .control-value").css('color', 'red');
+
+			       	}else if(status == "unauthorized"){
+			       		jQuery('#blueshiftconnect_Step1_validate_value').val(0);
+			       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value").append('<p class="errormsg" style="color:red">Event Key are not valid.please try again.</p>');
+			       		jQuery("#row_blueshiftconnect_Step1_validate_msg .value .control-value").css('color', 'red');
+			 
+			       	}
+			    }
+    		});
+    	});
+	});
+});
+</script>
